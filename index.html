@@ -1,34 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kovel English School</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F5E8C2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Шапка з меню */
+        .header {
+            background-color: #4B0082;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+        }
+
+        .flags img {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .flags span {
+            font-weight: bold;
+            color: white;
+            margin-right: 10px;
+        }
+
+        /* Меню */
+        .menu a {
+            color: red; /* Червоний колір для тем меню */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #FFD700;
+        }
+
+        .instagram-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Основний контент */
+        .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 50px 20px;
+            background: #F5E8C2;
+        }
+
+        .main-text {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        .main-text h1 {
+            color: #4B0082;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .main-text p {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .icon {
+            width: 50px;
+            margin-top: 20px;
+        }
+
+        /* Секція з фото праворуч */
+        .main-image {
+            width: 40%;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-image h3 {
+            color: #333;
+            font-size: 20px; /* Трохи зменшено розмір заголовка */
+            margin-bottom: 10px;
+        }
+
+        .main-image img {
+            max-width: 100%;
+            max-height: 250px; /* Обмеження висоти зображення */
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid #4B0082;
+        }
+
+        .main-image p {
+            font-size: 18px;
+            color: #4B0082;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Стиль кнопки для запису на пробне заняття */
+        .register-btn {
+            background-color: #FF4500;
+            color: white;
+            padding: 10px 25px; /* Зменшено padding */
+            font-size: 26px; /* Зменшено розмір шрифту */
+            border-radius: 20px; /* Зменшено радіус заокруглення */
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            width: auto; /* Видалено фіксовану ширину */
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-btn:hover {
+            background-color: #FF6347;
+        }
+
+        /* Карусель */
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            max-width: 100%;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .gallery-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery img {
+            max-width: 560px; /* Середній розмір зображень */
+            height: auto;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .carousel-btn {
+            background-color: #4B0082;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        /* Центрування кнопки */
+        .centered-btn {
+            text-align: center;
+        }
+
+        /* Футер */
+        .footer {
+            background-color: #4B0082;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>About us</li>
-                <li>Tutors</li>
-                <li>Sheudle</li>
-                <li>Reviews</li>
-            </ul>
-        </nav>
 
-    </header>
+    <!-- Шапка сайту -->
+    <div class="header">
+        <!-- Перемикач мов -->
+        <div class="flags">
+            <span>Мова:</span>
+            <img id="uaFlag" src="./images/ua_flag.png" alt="UA" width="30">
+            <img id="ukFlag" src="./images/uk_flag.png" alt="UK" width="30">
+        </div>
 
-    <main>
-        <h2>Kovel English School</h2>
-        <p>Це сучасна школа англійської мови, де навчання перетворюється 
-            на захопливу подорож до нових можливостей. Ми пропонуємо
-            курси для дітей та дорослих.
-             </p>
-             <img src="./images/Flag_of_Great_Britain_(1707–1800).svg" alt="">
-    </main>
+        <!-- Меню -->
+        <div class="menu">
+            <a href="mailto:school24eng@gmail.com">school24eng@gmail.com</a>
+            <a href="#about">Про нас</a>
+            <a href="#tutors">Викладачі</a>
+            <a href="#schedule">Розклад</a>
+            <a href="#reviews">Відгуки</a>
+            <a href="https://www.instagram.com/a.plieshkova?igsh=NXg1ZG80YjVpZWQ0" target="_blank"><img src="./images/insta.79b8f512-1b22-45d6-9495-881485e3a87e" alt="Instagram" width="30"></a>
+        </div>
+    </div>
 
-    <footer>
+    <!-- Основний контент -->
+    <div class="main">
+        <!-- Лівий текстовий блок -->
+        <div class="main-text">
+            <h1>Kovel English School</h1>
+            <p>Це сучасна школа англійської мови, де навчання перетворюється на захопливу подорож до нових можливостей. Ми пропонуємо курси для дітей та дорослих.</p>
+        </div>
 
-    </footer>
+        <!-- Правий блок з мапою -->
+        <div class="main-image">
+            <h3>Наше розташування:</h3>
+            <img src="./images/1245.png" alt="Мапа">
+            <p>м. Ковель, вул. Косачів 8</p>
+        </div>
+    </div>
+
+    <!-- Кнопка центру -->
+    <div class="centered-btn">
+        <a href="https://t.me/aniaplieshkova" target="_blank" class="register-btn">Записатись на пробне!</a>
+    </div>
+
+    <!-- Карусель зображень -->
+    <div class="gallery">
+        <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="gallery-images" id="galleryImages">
+            <img src="./images/123.jpeg" alt="Заняття у школі">
+            <img src="./images/155.jpg" alt="Учні на уроках">
+        </div>
+        <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Футер -->
+    <div class="footer">
+        <p>&copy; Kovel English School</p>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const images = document.querySelectorAll('.gallery img');
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            const offset = -currentIndex * (images[0].clientWidth + 20); // 20 - це відстань між зображеннями
+            document.getElementById('galleryImages').style.transform = `translateX(${offset}px)`;
+        }
+    </script>
+
 </body>
-</html>
+</html
