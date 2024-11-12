@@ -40,7 +40,7 @@
 
         /* Меню */
         .menu a {
-            color: red; /* Червоний колір для тем меню */
+            color: red;
             text-decoration: none;
             margin: 0 15px;
             font-size: 16px;
@@ -103,13 +103,13 @@
 
         .main-image h3 {
             color: #333;
-            font-size: 20px; /* Трохи зменшено розмір заголовка */
+            font-size: 20px;
             margin-bottom: 10px;
         }
 
         .main-image img {
             max-width: 100%;
-            max-height: 250px; /* Обмеження висоти зображення */
+            max-height: 250px;
             height: auto;
             border-radius: 15px;
             border: 3px solid #4B0082;
@@ -126,13 +126,12 @@
         .register-btn {
             background-color: #FF4500;
             color: white;
-            padding: 10px 25px; /* Зменшено padding */
-            font-size: 26px; /* Зменшено розмір шрифту */
-            border-radius: 20px; /* Зменшено радіус заокруглення */
+            padding: 10px 25px;
+            font-size: 26px;
+            border-radius: 20px;
             text-align: center;
             display: inline-block;
             text-decoration: none;
-            width: auto; /* Видалено фіксовану ширину */
             margin: 20px 0;
             transition: background-color 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -159,7 +158,7 @@
         }
 
         .gallery img {
-            max-width: 560px; /* Середній розмір зображень */
+            max-width: 560px;
             height: auto;
             border-radius: 10px;
             margin: 0 10px;
@@ -200,12 +199,31 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+
+        /* Адаптація для мобільних пристроїв */
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-text, .main-image {
+                width: 100%;
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .menu a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Шапка сайту -->
-    <div class="header">
+    <header class="header">
         <!-- Перемикач мов -->
         <div class="flags">
             <span>Мова:</span>
@@ -220,12 +238,12 @@
             <a href="#tutors">Викладачі</a>
             <a href="#schedule">Розклад</a>
             <a href="#reviews">Відгуки</a>
-            <a href="https://www.instagram.com/a.plieshkova?igsh=NXg1ZG80YjVpZWQ0" target="_blank"><img src="./images/insta.79b8f512-1b22-45d6-9495-881485e3a87e" alt="Instagram" width="30"></a>
+            <a href="https://www.instagram.com/a.plieshkova?igsh=NXg1ZG80YjVpZWQ0" target="_blank"><img src="./images/insta.png" alt="Instagram" width="30"></a>
         </div>
-    </div>
+    </header>
 
     <!-- Основний контент -->
-    <div class="main">
+    <main class="main">
         <!-- Лівий текстовий блок -->
         <div class="main-text">
             <h1>Kovel English School</h1>
@@ -238,7 +256,7 @@
             <img src="./images/1245.png" alt="Мапа">
             <p>м. Ковель, вул. Косачів 8</p>
         </div>
-    </div>
+    </main>
 
     <!-- Кнопка центру -->
     <div class="centered-btn">
@@ -256,9 +274,9 @@
     </div>
 
     <!-- Футер -->
-    <div class="footer">
+    <footer class="footer">
         <p>&copy; Kovel English School</p>
-    </div>
+    </footer>
 
     <script>
         let currentIndex = 0;
@@ -273,10 +291,10 @@
                 currentIndex = 0;
             }
 
-            const offset = -currentIndex * (images[0].clientWidth + 20); // 20 - це відстань між зображеннями
+            const offset = -currentIndex * (images[0].clientWidth + 20);
             document.getElementById('galleryImages').style.transform = `translateX(${offset}px)`;
         }
     </script>
 
 </body>
-</html
+</html>
